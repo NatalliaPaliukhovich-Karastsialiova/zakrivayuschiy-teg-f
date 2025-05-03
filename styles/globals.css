@@ -35,11 +35,17 @@ input {
   color: currentColor;
   font-family: inherit;
   font-size: inherit;
+  cursor: pointer;
 }
 
 ul,
 ol {
   list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
 }
 
 .visually-hidden {
