@@ -16,7 +16,6 @@
   font-family: var(--main-font), sans-serif;
   font-variation-settings: "wght" var(--normal-font-weight);
   color: var(--main-text-color);
-  padding: 100px 0;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -33,6 +32,7 @@
   padding-block-end: 128px;
   inline-size: clamp(375px, 100%, 700px);
   background-color: var(--card-bg-color);
+  margin-block-start: 100px;
   margin-block-end: 100px;
 }
 
@@ -56,17 +56,12 @@
   align-items: center;
   flex-direction: column;
   gap: 50px;
+  margin-block-end: 100px;
 }
 
 .card {
   border: 2px solid var(--border-color);
   background-color: var(--card-bg-color);
-}
-
-.card__img {
-  position: relative;
-  overflow: hidden;
-  height: 696px;
 }
 
 .card__img img {
@@ -75,21 +70,35 @@
   object-position: -335px;
 }
 
-.extra-border {
-  border: 2px solid var(--border-color);
-  height: 692px;
-}
-
-.card__img::before {
-  content: attr(data-watermark);
+.watermark {
   position: absolute;
   font-family: var(--accent-font), sans-serif;
   font-weight: 400;
   font-size: 14px;
-  -webkit-text-stroke: 1px var(--text-border-color);
-  top: 25px;
+  text-shadow:
+    -1px -1px 0 var(--text-border-color),
+     1px -1px 0 var(--text-border-color),
+    -1px  1px 0 var(--text-border-color),
+     1px  1px 0 var(--text-border-color);
+  top: 23px;
   right: 25px;
+  mix-blend-mode: hard-light;
   z-index: 2;
+}
+
+@supports((text-stroke: 1px var(--text-border-color)) or (-webkit-text-stroke: 1px var(--text-border-color))) {
+  .watermark {
+    -webkit-text-stroke: 1px var(--text-border-color);
+    text-stroke: 1px var(--text-border-color);
+    text-shadow: none;
+  }
+}
+
+
+.card__img {
+  position: relative;
+  overflow: hidden;
+  height: 696px;
 }
 
 .card__title {
@@ -115,28 +124,38 @@
 }
 
 .card__like-button {
-  align-self: flex-end;
-  padding: 12px 35px 10px;
+  padding: 12px 35px 9px;
   background-color: transparent;
   border: 2px solid var(--border-color);
   font-family: var(--accent-font), sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 0.9em;
-  position: relative;
 }
 
 .like-icon {
-  position: absolute;
   inline-size: 27px;
   block-size: 24px;
-  top: 8px;
-  left: -40px;
+}
+
+.card__icon-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
+.btn__wrapper {
+  display: flex;
+  gap: 12px;
+  align-self: flex-end;
+  justify-content: center;
 }
 
 .memory-save {
   padding: 16px 0;
-  inline-size: clamp(300px, 100%, 339px);
+  inline-size: 339px;
   background-color: transparent;
   border: 2px solid var(--border-color);
   font-family: var(--accent-font), sans-serif;
@@ -152,8 +171,8 @@
 }
 
 .memory-save-icon {
-  height: 21px;
-  width: 21px;
+  inline-size: 21px;
+  block-size: 21px;
 }
 
 .filter-sepia {
@@ -182,4 +201,78 @@
 
 .filter-mix {
   filter: hue-rotate(90deg) opacity(0.7) blur(1px);
+}
+
+.dialog {
+  padding: 30px;
+  width: 350px;
+}
+
+.dialog::backdrop {
+  background-color: var(--backdrop-color);
+}
+
+html:has(.dialog[open]) {
+  overflow: hidden;
+}
+
+.dialog__title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: var(--accent-font), monospace;
+  font-weight: var(--normal-font-weight);
+  font-size: 14px;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+
+.dialog-save-icon {
+  inline-size: 39px;
+  block-size: 39px;
+  flex-shrink: 0;
+}
+
+.dialog__submit {
+  padding: 12.5px 0;
+  inline-size: 100%;
+  border: 2px solid var(--border-color);
+  font-family: var(--accent-font), monospace;
+  background-color: var(--card-bg-color);
+  font-weight: var(--normal-font-weight);
+  font-size: 14px;
+  line-height: 0.9em;
+  text-transform: uppercase;
+  margin-block-start: 30px;
+}
+
+@media (width <= 700px) {
+  .header {
+    padding-block-start: 120px;
+    padding-block-end: 120px;
+  }
+
+  .card__img {
+    height: 371px;
+  }
+
+  .card__img img {
+    object-position: right;
+  }
+
+  .card__img::before {
+    top: 20px;
+    right: 15px;
+  }
+
+  .memory-save {
+    padding: 15px 0;
+    flex-direction: column;
+    inline-size: 310px;
+  }
+
+  .memory-save-icon {
+    inline-size: 28px;
+    block-size: 28px;
+  }
 }
