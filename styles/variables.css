@@ -1,13 +1,24 @@
 :root {
   --main-font: 'Inter-Variable';
   --accent-font: 'PressStart2P-Regular', monospace;
+  --header-title-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   --normal-font-weight: 400;
   --bold-font-weight: 700;
+  --content-width: min(100%, 700px);
   --border-color: #000;
   --main-text-color: #000;
   --text-border-color: #d3d3d3;
   --card-bg-color: #fff;
   --backdrop-color: #000000BF;
+  --shadow-color: #000;
+  --btn-hover-color: #000;
+  --btn-text-color: #fff;
+  --contour-color: #000;
+  --animation-fill-color:#f00;
+  --main-body-color: #000;
+  --core-color: #fff;
+  --heart-hover-color: #000;
+  --heart-active-color: #f00;
   --background-image: repeating-linear-gradient(0deg, #d3d3d3 0 2px, transparent 2px 4px),
                       repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
                       repeating-linear-gradient(180deg, #e7e7e7, #1a1a1a);
