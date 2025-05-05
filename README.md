@@ -1,1 +1,1 @@
-В этой папке будут храниться все необходимые SVG-файлы для сайта.
+https://natalliapaliukhovich-karastsialiova.github.io/zakrivayuschiy-teg-f/
