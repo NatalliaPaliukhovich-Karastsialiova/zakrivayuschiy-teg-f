@@ -29,40 +29,40 @@
   opacity: 0;
 }
 
-.like-icon__core{
+.like-icon__core {
   transition: fill .3s ease 0.03s;
 }
 
-.like-icon__main-body{
+.like-icon__main-body {
   transition: fill .3s ease;
 }
 
-.like-icon:hover .like-icon__core{
+.like-icon:hover .like-icon__core {
   fill: var(--heart-hover-color);
   transition: fill .3s ease;
 }
 
-.like-icon:hover .like-icon__main-body{
+.like-icon:hover .like-icon__main-body {
   fill: var(--heart-hover-color);
   transition: fill .3s ease 0.05s;
 }
 
-.like-icon:active .like-icon__core{
+.like-icon:active .like-icon__core {
   fill: var(--heart-active-color);
   transition: fill .3s ease;
 }
 
-.like-icon:active .like-icon__main-body{
+.like-icon:active .like-icon__main-body {
   fill: var(--heart-active-color);
   transition: fill .3s ease 0.05s;
 }
 
-.like-icon.is-liked .like-icon__core{
+.like-icon.is-liked .like-icon__core {
   fill: var(--heart-active-color);
   transition: fill .3s ease;
 }
 
-.like-icon.is-liked .like-icon__main-body{
+.like-icon.is-liked .like-icon__main-body {
   fill: var(--heart-active-color);
   transition: fill .3s ease .03s;
 }
