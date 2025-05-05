@@ -1,1 +1,1 @@
-https://natalliapaliukhovich-karastsialiova.github.io/zakrivayuschiy-teg-f/
+https://github.com/natalliapaliukhovich-karastsialiova/zakrivayuschiy-teg-f
