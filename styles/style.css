@@ -89,9 +89,9 @@
 
 .card__img {
   position: relative;
-  overflow: hidden;
   border-block-start: 2px solid var(--border-color);
   border-block-end: 2px solid var(--border-color);
+  overflow: hidden;
   block-size: 700px;
 }
 
@@ -154,9 +154,9 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+  margin: 0 auto;
   block-size: 55px;
   inline-size: 339px;
-  margin: 0 auto;
 }
 
 .dialog__submit {
