@@ -110,8 +110,10 @@
   line-height: 1.16em;
 }
 
-.card__place-text {
-  margin-block-start: 27px;
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
   margin-block-end: 25px;
 }
 
@@ -238,8 +240,9 @@
 }
 
 .dialog {
+  border: 2px solid var(--border-color);
   padding: 30px;
-  inline-size: 350px;
+  max-inline-size: 357px;
 }
 
 .dialog::backdrop {
@@ -287,6 +290,11 @@ html:has(.dialog[open]) {
     right: 15px;
   }
 
+  .watermark {
+    top: 20px;
+    right: 12px;
+  }
+
   .memory-save {
     flex-direction: column;
     block-size: 84px;
@@ -297,15 +305,24 @@ html:has(.dialog[open]) {
     inline-size: 28px;
     block-size: 28px;
   }
+
+  .dialog {
+    padding: 30px 40px;
+    max-inline-size: min(100%, 341px);
+  }
 }
 
-@media (width <= 375px) {
-
-  :root {
-    --header-title-size: clamp(1.75rem, 0.25rem + 12vw, 3.0625rem);
-  }
+@media (width <= 300px) {
 
   .card__img {
-    block-size: 200px;
+    block-size: 250px;
+  }
+
+  .dialog {
+    padding: 20px;
+  }
+
+  .dialog__title {
+    font-size: 10px;
   }
 }
